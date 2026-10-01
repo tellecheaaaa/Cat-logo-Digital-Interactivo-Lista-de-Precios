@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vivero La Esperanza - Catálogo Digital</title>
+<title>Vivero La Esperanza - Catálogo Digital Interactivo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -106,7 +106,7 @@ h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 6
 
 .container { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
 
-/* BANNER DE PROMO (SOLO EN SECCIÓN OFERTAS) */
+/* BANNER DE PROMO (SOLO VISIBLE EN SECCIÓN DE OFERTAS) */
 .promo-banner {
   background: #fffbeb;
   border: 1px solid #fcd34d;
@@ -146,7 +146,7 @@ h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 6
 }
 
 .grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 18px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 18px;
 }
 
 .card {
@@ -203,6 +203,7 @@ h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 6
   background: rgba(255, 255, 255, 0.85); border: none; border-radius: 50%;
   width: 32px; height: 32px; font-size: 1rem; cursor: pointer; z-index: 10;
   display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 .carousel-container { position: relative; width: 100%; height: 250px; background: #f3f4f6; }
@@ -309,6 +310,18 @@ h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 6
   </div>
 
   <div class="sidebar-section">
+    <div class="sidebar-title">Categorías</div>
+    <ul class="sidebar-links">
+      <li><a href="#" onclick="setQuickFilter('all'); toggleSidebar();">🌿 Todos los Productos</a></li>
+      <li><a href="#" onclick="setQuickFilter('3l'); toggleSidebar();">🪴 Maceta N°3 (3L)</a></li>
+      <li><a href="#" onclick="setQuickFilter('5l'); toggleSidebar();">🌿 Maceta N°5 (5L)</a></li>
+      <li><a href="#" onclick="setQuickFilter('florales'); toggleSidebar();">🌸 Florales (N°12)</a></li>
+      <li><a href="#" onclick="setQuickFilter('insumos'); toggleSidebar();">📦 Insumos y Macetas</a></li>
+      <li><a href="#" onclick="setQuickFilter('promos'); toggleSidebar();">🔥 Plantas con Descuento (20% OFF)</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-section">
     <div class="sidebar-title">Contacto y Redes</div>
     <ul class="sidebar-links">
       <li><a href="https://instagram.com" target="_blank">📸 Instagram: @viverolaesperanza</a></li>
@@ -329,13 +342,13 @@ h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 6
     🌿 <strong>PROMO 20% OFF:</strong> Comprando <strong>5 o más unidades</strong> de la misma planta, ¡el descuento se aplica automáticamente a tu pedido!
   </div>
 
-  <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar por planta o insumo (ej: Monstera, Potus, Maceta)...">
+  <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar por nombre de planta o insumo (ej: Monstera, Maceta, Potus)...">
 
   <!-- FILTROS RÁPIDOS -->
   <div class="quick-filters">
     <button class="filter-btn active" onclick="setQuickFilter('all', this)">🌿 Todos</button>
-    <button class="filter-btn" onclick="setQuickFilter('interior', this)">🪴 Interior</button>
-    <button class="filter-btn" onclick="setQuickFilter('exterior', this)">☀️ Exterior</button>
+    <button class="filter-btn" onclick="setQuickFilter('3l', this)">🪴 Maceta 3L</button>
+    <button class="filter-btn" onclick="setQuickFilter('5l', this)">🌿 Maceta 5L</button>
     <button class="filter-btn" onclick="setQuickFilter('florales', this)">🌸 Florales</button>
     <button class="filter-btn" onclick="setQuickFilter('insumos', this)">📦 Insumos</button>
     <button class="filter-btn" onclick="setQuickFilter('promos', this)">🔥 Plantas con Descuento</button>
@@ -406,62 +419,45 @@ let catalogData = [];
 let cart = {};
 let currentFilter = 'all';
 let currentSlide = 0;
-let currentModalItem = null;
 
 function loadProducts() {
   catalogData = [
     {
-      "category": "🪴 1. Plantas de Interior y Exterior (3L)",
-      "tag": "interior",
+      "category": "🪴 1. Plantas de Interior y Exterior (Maceta N°3 - 3L)",
+      "tag": "3l",
       "items": [
-        { 
-          "id": "19", "name": "Potus", "size": "3 Litros", "priceNum": 12650, 
-          "imgs": ["https://http2.mlstatic.com/D_NQ_NP_878950-MLA109370689281_032026-O.webp", "https://http2.mlstatic.com/D_NQ_NP_704152-MLA104907423822_012026-F.jpg"], 
-          "sun": "🏠 Interior", "water": "💧 Poco",
-          "desc": "Planta colgante o trepadora de rápido crecimiento y muy fácil cuidado. Purifica el aire de los ambientes internos."
-        },
-        { 
-          "id": "20", "name": "Palmera Fénix", "size": "3 Litros", "priceNum": 12650, 
-          "imgs": ["https://http2.mlstatic.com/D_Q_NP_2X_808343-MLA106787748366_022026-P.webp"], 
-          "sun": "☀️ Sol Directo", "water": "💧💧 Medio",
-          "desc": "Palmera elegante ideal para balcones, jardines o maceteros grandes al sol."
-        },
-        { 
-          "id": "21", "name": "Monstera", "size": "3 Litros", "priceNum": 11800, 
-          "imgs": ["https://http2.mlstatic.com/D_Q_NP_2X_844426-MLA106779287772_022026-P.webp"], 
-          "sun": "🏠 Interior / Luz", "water": "💧💧 Medio",
-          "desc": "Planta de hojas caladas sumamente vistosa. Perfecta para decorar livings y espacios bien iluminados."
-        },
-        { 
-          "id": "22", "name": "Lavanda", "size": "3 Litros", "priceNum": 5050, 
-          "imgs": ["https://http2.mlstatic.com/D_NQ_NP_961951-MLA77131474206_062024-O.webp"], 
-          "sun": "☀️ Sol Directo", "water": "💧 Poco",
-          "desc": "Planta aromática de flores violetas. Requiere sol directo y poco riego."
-        }
+        { "id": "1", "name": "Pennisetum", "size": "3 Litros", "priceNum": 6750, "imgs": [DEFAULT_IMAGE], "sun": "☀️ Sol Directo", "water": "💧 Poco", "desc": "Planta ornamental de follaje vistoso, ideal para canteros y jardines al aire libre." },
+        { "id": "2", "name": "Petunia Colgante", "size": "3 Litros", "priceNum": 5050, "imgs": [DEFAULT_IMAGE], "sun": "☀️ Sol Directo", "water": "💧💧 Medio", "desc": "Flores vistosas ideales para macetas colgantes y balcones bien iluminados." },
+        { "id": "3", "name": "Lengua de Suegra", "size": "3 Litros", "priceNum": 10150, "imgs": [DEFAULT_IMAGE], "sun": "🏠 Interior / Sombra", "water": "💧 Muy Poco", "desc": "Planta sumamente resistente. Excelente para purificar el aire en interiores." },
+        { "id": "4", "name": "Monstera Adansonii", "size": "3 Litros", "priceNum": 8450, "imgs": [DEFAULT_IMAGE], "sun": "🏠 Interior Luz", "water": "💧💧 Medio", "desc": "Hojas caladas características. Muy decorativa para livings y espacios con luz indirecta." },
+        { "id": "19", "name": "Potus", "size": "3 Litros", "priceNum": 12650, "imgs": ["https://http2.mlstatic.com/D_NQ_NP_878950-MLA109370689281_032026-O.webp"], "sun": "🏠 Interior", "water": "💧 Poco", "desc": "Planta colgante o trepadora de rápido crecimiento y muy fácil cuidado." },
+        { "id": "20", "name": "Palmera Fénix", "size": "3 Litros", "priceNum": 12650, "imgs": ["https://http2.mlstatic.com/D_Q_NP_2X_808343-MLA106787748366_022026-P.webp"], "sun": "☀️ Sol Directo", "water": "💧💧 Medio", "desc": "Palmera elegante ideal para balcones, jardines o maceteros grandes al sol." },
+        { "id": "21", "name": "Monstera", "size": "3 Litros", "priceNum": 11800, "imgs": ["https://http2.mlstatic.com/D_Q_NP_2X_844426-MLA106779287772_022026-P.webp"], "sun": "🏠 Interior / Luz", "water": "💧💧 Medio", "desc": "Planta de hojas caladas sumamente vistosa. Perfecta para decorar el hogar." },
+        { "id": "22", "name": "Lavanda", "size": "3 Litros", "priceNum": 5050, "imgs": ["https://http2.mlstatic.com/D_NQ_NP_961951-MLA77131474206_062024-O.webp"], "sun": "☀️ Sol Directo", "water": "💧 Poco", "desc": "Planta aromática de flores violetas. Requiere sol directo y poco riego." }
       ]
     },
     {
-      "category": "🌸 2. Plantas y Florales (Maceta N°12)",
+      "category": "🌿 2. Plantas en Maceta N°5 (5L)",
+      "tag": "5l",
+      "items": [
+        { "id": "24", "name": "Palo de Agua", "size": "5 Litros", "priceNum": 15200, "imgs": [DEFAULT_IMAGE], "sun": "🏠 Interior", "water": "💧 Poco", "desc": "Clásica planta de interior de tronco firme y hojas verdes muy decorativas." },
+        { "id": "25", "name": "Crotón", "size": "5 Litros", "priceNum": 7600, "imgs": [DEFAULT_IMAGE], "sun": "🏠 Interior Luz", "water": "💧💧 Medio", "desc": "Follaje multicolor que aporta vida y calidez a cualquier ambiente." }
+      ]
+    },
+    {
+      "category": "🌸 3. Plantas y Florales (Maceta N°12)",
       "tag": "florales",
       "items": [
-        { 
-          "id": "27", "name": "Pensamiento", "size": "Maceta N°12", "priceNum": 2200, 
-          "imgs": ["https://http2.mlstatic.com/D_NQ_NP_996428-MLU84311344339_052025-O.webp"], 
-          "sun": "☀️ Sol", "water": "💧💧 Medio",
-          "desc": "Planta floral de variados colores ideal para dar vida a maceteros de exterior."
-        }
+        { "id": "27", "name": "Pensamiento", "size": "Maceta N°12", "priceNum": 2200, "imgs": ["https://http2.mlstatic.com/D_NQ_NP_996428-MLU84311344339_052025-O.webp"], "sun": "☀️ Sol", "water": "💧💧 Medio", "desc": "Planta floral de variados colores ideal para dar vida a maceteros de exterior." },
+        { "id": "28", "name": "Gazania", "size": "Maceta N°12", "priceNum": 2200, "imgs": [DEFAULT_IMAGE], "sun": "☀️ Sol Directo", "water": "💧 Poco", "desc": "Flores llamativas que abren totalmente al sol directo." }
       ]
     },
     {
-      "category": "📦 3. INSUMOS Y MACETAS",
+      "category": "📦 4. INSUMOS Y MACETAS",
       "tag": "insumos",
       "items": [
-        { 
-          "id": "46", "name": "Tierra para Plantar", "size": "Bolsa 10L", "priceNum": 13500, 
-          "imgs": ["https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=500&q=80"], 
-          "sun": "-", "water": "-",
-          "desc": "Sustrato fértil enriquecido con nutrientes listo para trasplantar."
-        }
+        { "id": "46", "name": "Tierra para Plantar", "size": "Bolsa", "priceNum": 13500, "imgs": [DEFAULT_IMAGE], "sun": "-", "water": "-", "desc": "Sustrato fértil enriquecido listo para trasplantar tus plantas." },
+        { "id": "47", "name": "Maceta Cemento", "size": "Unidad", "priceNum": 10000, "imgs": [DEFAULT_IMAGE], "sun": "-", "water": "-", "desc": "Maceta artesanal de cemento de excelente resistencia." }
       ]
     }
   ];
@@ -485,9 +481,8 @@ function toggleCartModal() {
 function setQuickFilter(category, btn) {
   currentFilter = category;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+  if (btn) btn.classList.add('active');
 
-  // Mostrar el aviso de descuento SOLO en la pestaña de Ofertas
   const banner = document.getElementById('promoBanner');
   banner.style.display = (category === 'promos') ? 'block' : 'none';
 
@@ -546,14 +541,12 @@ function renderCatalog(searchQuery = '') {
 }
 
 function openPlantDetail(item) {
-  currentModalItem = item;
   document.getElementById('modalTitle').innerText = item.name;
   document.getElementById('modalSub').innerText = item.size;
   document.getElementById('modalPrice').innerText = formatCurrency(item.priceNum);
   document.getElementById('modalDesc').innerText = item.desc || "Planta seleccionada del catálogo.";
   document.getElementById('modalTagCare').innerText = `${item.sun || 'Interior'} · ${item.water || 'Riego moderado'}`;
 
-  // Cargar Fotos
   const track = document.getElementById('carouselTrack');
   const dots = document.getElementById('carouselDots');
   track.innerHTML = "";
