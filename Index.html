@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vivero La Esperanza - Catálogo Digital Interactivo</title>
-<!-- Fuentes de alta calidad -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -22,9 +21,7 @@
   --border-color: #e5e7eb;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   font-family: 'Inter', -apple-system, sans-serif;
@@ -35,7 +32,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* NAVBAR SUPERIOR CON MENÚ Y TÍTULO */
 .top-navbar {
   position: sticky;
   top: 0;
@@ -70,7 +66,6 @@ body {
   margin: 0;
 }
 
-/* MENÚ LATERAL DESPLEGABLE (OFF-CANVAS) */
 .sidebar-overlay {
   position: fixed;
   top: 0;
@@ -105,9 +100,7 @@ body {
   overflow-y: auto;
 }
 
-.sidebar-menu.active {
-  left: 0;
-}
+.sidebar-menu.active { left: 0; }
 
 .sidebar-close-btn {
   background: none;
@@ -118,9 +111,7 @@ body {
   color: var(--text-muted);
 }
 
-.sidebar-section {
-  margin-bottom: 24px;
-}
+.sidebar-section { margin-bottom: 24px; }
 
 .sidebar-title {
   font-size: 0.75rem;
@@ -143,9 +134,7 @@ body {
   margin: 0;
 }
 
-.sidebar-links li {
-  margin-bottom: 10px;
-}
+.sidebar-links li { margin-bottom: 10px; }
 
 .sidebar-links a, .sidebar-links button {
   background: none;
@@ -163,16 +152,13 @@ body {
   text-align: left;
 }
 
-.sidebar-links button:hover, .sidebar-links a:hover {
-  color: var(--primary);
-}
+.sidebar-links button:hover, .sidebar-links a:hover { color: var(--primary); }
 
 .sidebar-links .highlight-promo {
   color: var(--promo-color);
   font-weight: 600;
 }
 
-/* HEADER & BANNER */
 header {
   text-align: center;
   max-width: 800px;
@@ -209,7 +195,6 @@ h1 {
   font-weight: 500;
 }
 
-/* BUSCADOR POR PLANTA */
 .search-container {
   max-width: 700px;
   margin: 0 auto 30px auto;
@@ -227,11 +212,8 @@ h1 {
   transition: border-color 0.2s ease;
 }
 
-.search-input:focus {
-  border-color: var(--primary);
-}
+.search-input:focus { border-color: var(--primary); }
 
-/* GRIDS Y TARJETAS */
 .catalog-container {
   max-width: 1100px;
   margin: 0 auto;
@@ -332,16 +314,13 @@ h1 {
   transition: background 0.15s ease;
 }
 
-.btn-qty:hover {
-  background: #f3f4f6;
-}
+.btn-qty:hover { background: #f3f4f6; }
 
 .qty-number {
   font-weight: 600;
   font-size: 0.88rem;
 }
 
-/* 🛒 BOTÓN Y MODAL INTERACTIVO DE CARRITO FLOTANTE */
 .cart-float-btn {
   position: fixed;
   bottom: 24px;
@@ -362,9 +341,7 @@ h1 {
   transition: transform 0.2s ease;
 }
 
-.cart-float-btn:hover {
-  transform: scale(1.05);
-}
+.cart-float-btn:hover { transform: scale(1.05); }
 
 .cart-badge-count {
   background: var(--accent);
@@ -375,7 +352,6 @@ h1 {
   font-weight: 700;
 }
 
-/* MODAL DEL CARRITO */
 .cart-modal-overlay {
   position: fixed;
   top: 0;
@@ -412,9 +388,7 @@ h1 {
   flex-direction: column;
 }
 
-.cart-modal.active {
-  bottom: 0;
-}
+.cart-modal.active { bottom: 0; }
 
 .cart-modal-header {
   padding: 18px 20px;
@@ -454,9 +428,7 @@ h1 {
   font-size: 0.85rem;
 }
 
-.cart-item-title {
-  font-weight: 600;
-}
+.cart-item-title { font-weight: 600; }
 
 .cart-item-promo-tag {
   font-size: 0.7rem;
@@ -511,7 +483,6 @@ h1 {
 </head>
 <body>
 
-<!-- NAVBAR SUPERIOR -->
 <div class="top-navbar">
   <button class="menu-toggle-btn" onclick="toggleSidebar()">
     <span>☰</span> Menú
@@ -520,7 +491,6 @@ h1 {
   <div style="width: 60px;"></div>
 </div>
 
-<!-- OVERLAY Y MENÚ LATERAL -->
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
 <div class="sidebar-menu" id="sidebarMenu">
@@ -554,7 +524,6 @@ h1 {
   </div>
 </div>
 
-<!-- HEADER Y BARRA DE BÚSQUEDA -->
 <header>
   <h1>Vivero La Esperanza</h1>
   <p class="subtitle">Catálogo Digital Interactivo · Lista de Precios</p>
@@ -564,21 +533,18 @@ h1 {
   🌿 <strong>PROMO X CANTIDAD:</strong> Comprando <strong>5 o más unidades</strong> de la misma planta, ¡obtenés un <strong>20% DE DESCUENTO</strong> automático!
 </div>
 
-<!-- BUSCADOR POR PLANTA -->
 <div class="search-container">
   <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar por nombre de planta o insumo (ej: Monstera, Maceta, Potus)...">
 </div>
 
 <div class="catalog-container" id="catalog"></div>
 
-<!-- BOTÓN FLOTANTE DE CARRITO -->
 <button class="cart-float-btn" onclick="toggleCartModal()">
   <span>🛒 Mi Pedido</span>
   <span class="cart-badge-count" id="cartCount">0</span>
   <span id="cartTotalBtn">$0</span>
 </button>
 
-<!-- OVERLAY Y MODAL DEL CARRITO -->
 <div class="cart-modal-overlay" id="cartModalOverlay" onclick="toggleCartModal()"></div>
 
 <div class="cart-modal" id="cartModal">
@@ -587,9 +553,7 @@ h1 {
     <button class="cart-modal-close" onclick="toggleCartModal()">✕</button>
   </div>
 
-  <div class="cart-modal-body" id="cartModalBody">
-    <!-- Contenido generado con JS -->
-  </div>
+  <div class="cart-modal-body" id="cartModalBody"></div>
 
   <div class="cart-modal-footer">
     <button class="btn-whatsapp-submit" id="sendOrderBtn">
@@ -602,92 +566,23 @@ h1 {
 const PHONE_NUMBER = "5491130346893";
 const DEFAULT_IMAGE = "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80";
 
-// ⚙️ DESCUENTO DEL 20% A PARTIR DE 5 UNIDADES
 const PROMO_THRESHOLD = 5; 
 const DISCOUNT_PERCENT = 20;
 
-const catalogData = [
-{
-  category: "🪴 1. Plantas de Interior y Exterior (Maceta N°3 - 3L)",
-  tag: "interior",
-  items: [
-    { id: "1", name: "Pennisetum", size: "3 Litros", priceNum: 6750, img: "" },
-    { id: "2", name: "Petunia Colgante", size: "3 Litros", priceNum: 5050, img: "" },
-    { id: "3", name: "Lengua de Suegra", size: "3 Litros", priceNum: 10150, img: "" },
-    { id: "4", name: "Monstera Adansonii", size: "3 Litros", priceNum: 8450, img: "" },
-    { id: "5", name: "Salvia Leucantha", size: "3 Litros", priceNum: 8450, img: "" },
-    { id: "6", name: "Coleos", size: "3 Litros", priceNum: 5050, img: "" },
-    { id: "7", name: "Dieffenbachia", size: "3 Litros", priceNum: 8450, img: "" },
-    { id: "8", name: "Dracena verde", size: "3 Litros", priceNum: 8450, img: "" },
-    { id: "9", name: "Osteospermum", size: "3 Litros", priceNum: 9300, img: "" },
-    { id: "10", name: "Yuca", size: "3 Litros", priceNum: 12650, img: "" },
-    { id: "11", name: "Magoyana", size: "3 Litros", priceNum: 12650, img: "" },
-    { id: "12", name: "Wambe (Güembe)", size: "3 Litros", priceNum: 12650, img: "" },
-    { id: "13", name: "Areca", size: "3 Litros", priceNum: 10950, img: "" },
-    { id: "14", name: "Euforbia", size: "3 Litros", priceNum: 9300, img: "" },
-    { id: "15", name: "Ficus Triangular", size: "3 Litros", priceNum: 13500, img: "" },
-    { id: "16", name: "Palmito", size: "3 Litros", priceNum: 10950, img: "" },
-    { id: "17", name: "Singonio", size: "3 Litros", priceNum: 12650, img: "" },
-    { id: "18", name: "Sisus", size: "3 Litros", priceNum: 12650, img: "https://http2.mlstatic.com/D_NQ_NP_704152-MLA104907423822_012026-F.jpg" },
-    { id: "19", name: "Potus", size: "3 Litros", priceNum: 12650, img: "https://http2.mlstatic.com/D_NQ_NP_878950-MLA109370689281_032026-O.webp" },
-    { id: "20", name: "Palmera Fénix", size: "3 Litros", priceNum: 12650, img: "https://http2.mlstatic.com/D_Q_NP_2X_808343-MLA106787748366_022026-P.webp" },
-    { id: "21", name: "Monstera", size: "3 Litros", priceNum: 11800, img: "https://http2.mlstatic.com/D_Q_NP_2X_844426-MLA106779287772_022026-P.webp" },
-    { id: "22", name: "Lavanda", size: "3 Litros", priceNum: 5050, img: "https://http2.mlstatic.com/D_NQ_NP_961951-MLA77131474206_062024-O.webp" },
-    { id: "23", name: "Palo de Agua", size: "3 Litros", priceNum: 11800, img: "https://http2.mlstatic.com/D_NQ_NP_635748-MLA111647005239_052026-O.webp" }
-  ]
-},
-{
-  category: "🌿 2. Plantas en Maceta N°5 (5L)",
-  tag: "interior",
-  items: [
-    { id: "24", name: "Palo de Agua", size: "5 Litros", priceNum: 15200, img: "https://http2.mlstatic.com/D_NQ_NP_894197-MLA109167382054_042026-O.webp" },
-    { id: "25", name: "Crotón", size: "5 Litros", priceNum: 7600, img: "https://http2.mlstatic.com/D_NQ_NP_674538-MLA107480076525_022026-F.jpg" },
-    { id: "26", name: "Anthurium", size: "5 Litros", priceNum: 8450, img: "https://http2.mlstatic.com/D_NQ_NP_628958-MLA109418877224_042026-O.webp" }
-  ]
-},
-{
-  category: "🌸 3. Plantas y Florales (Maceta N°12)",
-  tag: "florales",
-  items: [
-    { id: "27", name: "Pensamiento", size: "Maceta N°12", priceNum: 2200, img: "https://http2.mlstatic.com/D_NQ_NP_996428-MLU84311344339_052025-O.webp" },
-    { id: "28", name: "Gazania", size: "Maceta N°12", priceNum: 2200, img: "" },
-    { id: "29", name: "Azúcar", size: "Maceta N°12", priceNum: 2200, img: "" },
-    { id: "30", name: "Incienso", size: "Maceta N°12", priceNum: 11800, img: "" },
-    { id: "31", name: "Sansevieria", size: "Maceta N°12", priceNum: 6750, img: "" },
-    { id: "32", name: "Palo de Agua", size: "Maceta N°12", priceNum: 6750, img: "" },
-    { id: "33", name: "Marginata", size: "Maceta N°12", priceNum: 5050, img: "" },
-    { id: "34", name: "Begonia Doble", size: "Maceta N°12", priceNum: 2200, img: "" },
-    { id: "35", name: "Malbón Maverick", size: "Maceta N°12", priceNum: 5050, img: "" },
-    { id: "36", name: "Glandularia", size: "Maceta N°12", priceNum: 1700, img: "https://http2.mlstatic.com/D_NQ_NP_882083-MLA43668135025_102020-O.webp" },
-    { id: "37", name: "Agapanto", size: "Maceta N°12", priceNum: 6750, img: "" },
-    { id: "38", name: "Suculentas", size: "Maceta N°12", priceNum: 2050, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4X0APYPW0AHOwTFnSUk1V7keu_7Lgw86aNg3RTcJTA&s" },
-    { id: "39", name: "Ají Ornamental", size: "Maceta N°12", priceNum: 2050, img: "" },
-    { id: "40", name: "Corazón Púrpura", size: "Maceta N°12", priceNum: 20600, img: "" },
-    { id: "41", name: "Coleos", size: "Maceta N°12", priceNum: 2050, img: "" }
-  ]
-},
-{
-  category: "🌵 4. EJEMPLARES ESPECIALES Y CERCOS VIVOS",
-  tag: "cercos",
-  items: [
-    { id: "42", name: "Palmera (ejemplar)", size: "Plantín", priceNum: 118150, img: "" },
-    { id: "43", name: "Cactus", size: "Plantín", priceNum: 1700, img: "" },
-    { id: "44", name: "Eugenia — unidad", size: "Plantín", priceNum: 10950, img: "" },
-    { id: "45", name: "Eugenia grande — unidad", size: "Plantín", priceNum: 13500, img: "" }
-  ]
-},
-{
-  category: "📦 5. INSUMOS Y MACETAS",
-  tag: "insumos",
-  items: [
-    { id: "46", name: "Tierra para Plantar", size: "Bolsa", priceNum: 13500, img: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=500&q=80" },
-    { id: "47", name: "Maceta Cemento", size: "Unidad", priceNum: 10000, img: "" }
-  ]
-}
-];
-
+let catalogData = [];
 let cart = {};
 let currentFilter = 'all';
+
+// CARGA DINÁMICA DE PRODUCTOS DESDE productos.json
+async function loadProducts() {
+  try {
+    const response = await fetch('productos.json');
+    catalogData = await response.json();
+    renderCatalog();
+  } catch (error) {
+    console.error('Error cargando productos.json:', error);
+  }
+}
 
 function formatCurrency(val) {
   return "$" + Math.round(val).toLocaleString('es-AR');
@@ -703,7 +598,6 @@ function toggleCartModal() {
   document.getElementById('cartModalOverlay').classList.toggle('active');
 }
 
-// RENDERIZADO DEL CATÁLOGO
 function renderCatalog(searchQuery = '') {
   const container = document.getElementById('catalog');
   container.innerHTML = "";
@@ -764,7 +658,6 @@ function filterCategory(category) {
   renderCatalog(document.getElementById('searchInput').value);
 }
 
-// ACTUALIZACIÓN DE CANTIDADES
 function updateQty(id, name, priceNum, change) {
   if (!cart[id]) {
     cart[id] = { name, priceNum, qty: 0 };
@@ -854,12 +747,10 @@ function updateCartSummary() {
   document.getElementById('cartTotalBtn').innerText = formatCurrency(finalTotal);
 }
 
-// BÚSQUEDA
 document.getElementById('searchInput').addEventListener('input', (e) => {
   renderCatalog(e.target.value);
 });
 
-// ENVÍO A WHATSAPP
 document.getElementById('sendOrderBtn').addEventListener('click', () => {
   const items = Object.values(cart);
   if (items.length === 0) {
@@ -897,8 +788,8 @@ document.getElementById('sendOrderBtn').addEventListener('click', () => {
   window.open(waUrl, '_blank');
 });
 
-// RENDER INICIAL
-renderCatalog();
+// Inicializar la carga remota al abrir la página
+loadProducts();
 </script>
 
 </body>
