@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "nombre": "Planta Ejemplo",
+    "precio": 1500,
+    "categoria": "Plantas",
+    "img": ""
+  }
+]
