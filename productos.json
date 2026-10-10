@@ -1,9 +1,18 @@
 [
   {
-    "id": 1,
-    "nombre": "Planta Ejemplo",
-    "precio": 1500,
-    "categoria": "Plantas",
-    "img": ""
+    "category": "Plantas",
+    "tag": "3l",
+    "items": [
+      {
+        "id": "1",
+        "name": "Planta Ejemplo",
+        "size": "Maceta N°3",
+        "priceNum": 1500,
+        "sun": "Interior",
+        "water": "Riego moderado",
+        "desc": "Esta es una planta de ejemplo para probar el catálogo.",
+        "imgs": [""]
+      }
+    ]
   }
 ]
