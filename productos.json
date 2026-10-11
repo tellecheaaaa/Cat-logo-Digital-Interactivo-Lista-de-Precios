@@ -1,132 +1,114 @@
 [
   {
-    "category": "🌿 1. En Interiores y Variedades",
+    "category": "🪴 Plantas de Interior y Variedades",
     "tag": "interior",
     "items": [
-      { "id": "1", "name": "Aglonema pataya m18", "size": "M18", "priceNum": 26000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "2", "name": "Aglonema fredman m24", "size": "M24", "priceNum": 34000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "3", "name": "Aglonema ruby m12", "size": "M12", "priceNum": 15000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "4", "name": "Alocacia", "size": "10 Litros", "priceNum": 13000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "5", "name": "Anturium m12", "size": "M12", "priceNum": 12000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "6", "name": "Anturium m15", "size": "M15", "priceNum": 18000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "7", "name": "Anturium m17", "size": "M17", "priceNum": 20000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "8", "name": "Alocacia amazonica m12", "size": "M12", "priceNum": 12000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "9", "name": "Alocacia black m13", "size": "M13", "priceNum": 12500, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "10", "name": "Aralia elegantisima 3lts", "size": "3 Litros", "priceNum": 7000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "11", "name": "Aralia ivonet m12", "size": "M12", "priceNum": 3500, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "12", "name": "Asplenium antiquum 3lts", "size": "3 Litros", "priceNum": 9000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "13", "name": "Baby m12", "size": "M12", "priceNum": 4500, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "14", "name": "Banano 4lts", "size": "4 Litros", "priceNum": 10000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "15", "name": "Banano grande", "size": "Ejemplar", "priceNum": 30000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "16", "name": "Begonia piel de sapo m12", "size": "M12", "priceNum": 3800, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "17", "name": "Corona de cristo 7lt", "size": "7 Litros", "priceNum": 10000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "18", "name": "Cordatum brazil/amarillo m12", "size": "M12", "priceNum": 3200, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "19", "name": "Cordatum colgante bol 18", "size": "Bol 18", "priceNum": 5800, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "20", "name": "Crotón m12 (variedades)", "size": "M12", "priceNum": 3000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "21", "name": "Crotón 3L", "size": "3 Litros", "priceNum": 7000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "22", "name": "Crotón m15 (petra/monalisa)", "size": "M15", "priceNum": 11500, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "23", "name": "Calathea macoyana m12", "size": "M12", "priceNum": 4800, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "24", "name": "Calathea macoyana m15", "size": "M15", "priceNum": 9000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "25", "name": "Calathea macoyana 5lts", "size": "5 Litros", "priceNum": 15500, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "26", "name": "Calathea insignia m15 baja", "size": "M15", "priceNum": 9000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "27", "name": "Calathea insignia m17", "size": "M17", "priceNum": 18000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "28", "name": "Calathea Stromante m15", "size": "M15", "priceNum": 6000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "29", "name": "Calathea stromathe 3lts", "size": "3 Litros", "priceNum": 8500, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "30", "name": "Difenbachia 3lts", "size": "3 Litros", "priceNum": 7000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "31", "name": "Episcia bol 18", "size": "Bol 18", "priceNum": 7000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "32", "name": "Estrella federal m15", "size": "M15", "priceNum": 10000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "33", "name": "Gomero 3lt", "size": "3 Litros", "priceNum": 14000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "34", "name": "Gomero negro/ rosado alto", "size": "Ejemplar", "priceNum": 25000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "35", "name": "Helecho blechnum 3lt", "size": "3 Litros", "priceNum": 8500, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "36", "name": "Helecho chester 3lts", "size": "3 Litros", "priceNum": 7000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "37", "name": "Helecho gris m12", "size": "M12", "priceNum": 4000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "38", "name": "Jazmin magno 3lts", "size": "3 Litros", "priceNum": 10000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "39", "name": "Jazmin magno 7lts", "size": "7 Litros", "priceNum": 18000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "40", "name": "Maranta puertoriqueño m12", "size": "M12", "priceNum": 4000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "41", "name": "Maranta sapito m12", "size": "M12", "priceNum": 4000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "42", "name": "Maranta leuconera m12", "size": "M12", "priceNum": 4500, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "43", "name": "Marginata m12", "size": "M12", "priceNum": 4000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "44", "name": "Marginata 3lt", "size": "3 Litros", "priceNum": 7500, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "45", "name": "Mil raya m14", "size": "M14", "priceNum": 7000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "46", "name": "Monstera m12", "size": "M12", "priceNum": 4500, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "47", "name": "Monstera 3lt", "size": "3 Litros", "priceNum": 6800, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "48", "name": "Monstera 7lt y 15lts", "size": "7-15 Litros", "priceNum": 15000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "49", "name": "Oya querri m13", "size": "M13", "priceNum": 8000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "50", "name": "Platicerium bol 18", "size": "Bol 18", "priceNum": 9000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "51", "name": "Peperonia verde/matizado/negro m12", "size": "M12", "priceNum": 3800, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "52", "name": "Peperonia sandia m14", "size": "M14", "priceNum": 7000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "53", "name": "Perubiano m12", "size": "M12", "priceNum": 4000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "54", "name": "Perubiano 5lts", "size": "5 Litros", "priceNum": 13500, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "55", "name": "Palo de agua m12", "size": "M12", "priceNum": 3800, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "56", "name": "Palo de agua 3lt", "size": "3 Litros", "priceNum": 6000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "57", "name": "Palo de agua 7lt", "size": "7 Litros", "priceNum": 18000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "58", "name": "Palo de agua 15lts ramificado", "size": "15 Litros", "priceNum": 32000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "59", "name": "Palo de agua 20lts tronco grueso", "size": "20 Litros", "priceNum": 40000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "60", "name": "Palmito m12", "size": "M12", "priceNum": 3800, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "61", "name": "Palmito 3lt chico", "size": "3 Litros", "priceNum": 8500, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "62", "name": "Palmito 3lts alto", "size": "3 Litros", "priceNum": 10000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "63", "name": "Palmito 10lts", "size": "10 Litros", "priceNum": 25000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "64", "name": "Pandurata audrey 3lt", "size": "3 Litros", "priceNum": 15000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "65", "name": "Pandurata audrey 10lt 1,40m", "size": "10 Litros", "priceNum": 30000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "66", "name": "Philodendro wembe 3L", "size": "3 Litros", "priceNum": 6500, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "67", "name": "Philodendro wembe 7lts", "size": "7 Litros", "priceNum": 12000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "68", "name": "Pothus comun colgante", "size": "Colgante", "priceNum": 5500, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "69", "name": "Pothus comun tutor 3lts", "size": "3 Litros", "priceNum": 7000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] }
+      {
+        "id": "1",
+        "name": "Aglonema",
+        "size": "Variedad M12 / M18 / M24",
+        "priceNum": 15000,
+        "info": "Disponible en varias medidas (Ruby M12: $15.000, Pataya M18: $26.000, Fredman M24: $34.000)",
+        "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"]
+      },
+      {
+        "id": "2",
+        "name": "Anturium",
+        "size": "Maceta M12 / M15 / M17",
+        "priceNum": 12000,
+        "info": "Elegí tu medida: M12 ($12.000), M15 ($18.000) o M17 ($20.000).",
+        "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"]
+      },
+      {
+        "id": "3",
+        "name": "Alocacia",
+        "size": "M12 / M13 / 10 Litros",
+        "priceNum": 12000,
+        "info": "Variedades Amazonica M12 ($12.000), Black M13 ($12.500) y 10 Litros ($13.000).",
+        "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]
+      },
+      {
+        "id": "4",
+        "name": "Crotón",
+        "size": "M12 / M15 / 3 Litros",
+        "priceNum": 3000,
+        "info": "Variedades en M12 ($3.000), 3L ($7.000) y M15 Petra/Monalisa ($11.500).",
+        "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"]
+      },
+      {
+        "id": "5",
+        "name": "Calathea",
+        "size": "M12 / M15 / M17 / 3L / 5L",
+        "priceNum": 4800,
+        "info": "Macova y Stromanthe en diferentes tamaños desde $4.800.",
+        "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"]
+      },
+      {
+        "id": "6",
+        "name": "Palo de Agua",
+        "size": "M12 / 3L / 7L / 15L / 20L",
+        "priceNum": 3800,
+        "info": "Desde M12 ($3.800) hasta ejemplares grandes de 20L ($40.000).",
+        "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"]
+      },
+      {
+        "id": "7",
+        "name": "Strelitzia (Ave del Paraíso)",
+        "size": "3L / 7L / 10L / 15L / 20L+",
+        "priceNum": 15000,
+        "info": "Nicolai y Reginae en varios tamaños y ejemplares de gran porte.",
+        "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]
+      }
     ]
   },
   {
-    "category": "🍊 2. Cítricos y Frutales",
+    "category": "🍊 Cítricos y Frutales",
     "tag": "frutales",
     "items": [
-      { "id": "70", "name": "Cítricos 7lt", "size": "7 Litros", "priceNum": 14000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "71", "name": "Cítricos bolsita tubo", "size": "Bolsita Tubo", "priceNum": 12000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "72", "name": "Cítricos 20lts", "size": "20 Litros", "priceNum": 38000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "73", "name": "Arándano m14", "size": "M14", "priceNum": 6800, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "74", "name": "Arándano 5lt", "size": "5 Litros", "priceNum": 9000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "75", "name": "Ciruela remolacha", "size": "Ejemplar", "priceNum": 16000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "76", "name": "Durazno 10lt", "size": "10 Litros", "priceNum": 14800, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "77", "name": "Damasco 15lt", "size": "15 Litros", "priceNum": 16000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "78", "name": "Mango 3lt", "size": "3 Litros", "priceNum": 14000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "79", "name": "Nuez pecán 7lt", "size": "7 Litros", "priceNum": 22000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] }
+      {
+        "id": "8",
+        "name": "Cítricos",
+        "size": "7L / Bolsita Tubo / 20L",
+        "priceNum": 12000,
+        "info": "Limón, Mandarina, Naranja y Pomelo. Bolsita tubo ($12.000), 7L ($14.000), 20L ($38.000).",
+        "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"]
+      },
+      {
+        "id": "9",
+        "name": "Arándano",
+        "size": "M14 / 5 Litros",
+        "priceNum": 6800,
+        "info": "Presentación M14 ($6.800) y 5 Litros ($9.000).",
+        "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"]
+      }
     ]
   },
   {
-    "category": "🌴 3. Palmeras y Árboles",
+    "category": "🌴 Palmeras y Árboles",
     "tag": "cercos",
     "items": [
-      { "id": "80", "name": "Areka 3lts", "size": "3 Litros", "priceNum": 13000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "81", "name": "Areka 5lts", "size": "5 Litros", "priceNum": 18000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "82", "name": "Cica 3lts", "size": "3 Litros", "priceNum": 11000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "83", "name": "Palmera pindo 5lts", "size": "5 Litros", "priceNum": 17000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "84", "name": "Alcanfor 7lt", "size": "7 Litros", "priceNum": 13000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "85", "name": "Magnolia grandiflora 7lts", "size": "7 Litros", "priceNum": 15000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "86", "name": "Olivo 4lts", "size": "4 Litros", "priceNum": 25000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] }
+      {
+        "id": "10",
+        "name": "Palmera Pindo / Fénix",
+        "size": "Variados tamaños",
+        "priceNum": 8000,
+        "info": "Desde pequeños ejemplares hasta troncos grandes de 3 metros.",
+        "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"]
+      }
     ]
   },
   {
-    "category": "🌸 4. Plantines y Aromáticas",
+    "category": "🌸 Plantines y Aromáticas",
     "tag": "florales",
     "items": [
-      { "id": "87", "name": "Crisantemo m12", "size": "M12", "priceNum": 1200, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "88", "name": "Geranios Hiedra", "size": "M12", "priceNum": 1200, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "89", "name": "Pensamiento m12", "size": "M12", "priceNum": 850, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "90", "name": "Suculentas m12", "size": "M12", "priceNum": 2050, "imgs": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4X0APYPW0AHOwTFnSUk1V7keu_7Lgw86aNg3RTcJTA&s"] },
-      { "id": "91", "name": "Albahaca m12", "size": "M12", "priceNum": 500, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "92", "name": "Menta m12", "size": "M12", "priceNum": 400, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "93", "name": "Romero m12", "size": "M12", "priceNum": 450, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] }
-    ]
-  },
-  {
-    "category": "🪴 5. Plantas 3L y Cercos Vivos",
-    "tag": "3l",
-    "items": [
-      { "id": "94", "name": "Azarero 7lt", "size": "7 Litros", "priceNum": 8000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "95", "name": "Buxus 5lts", "size": "5 Litros", "priceNum": 11000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "96", "name": "Camelia 3lts", "size": "3 Litros", "priceNum": 12000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "97", "name": "Eugenia 10L", "size": "10 Litros", "priceNum": 12000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "98", "name": "Jazmin de leche 5lt", "size": "5 Litros", "priceNum": 8000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "99", "name": "Leylandi 4lt 1.2m", "size": "4 Litros", "priceNum": 10000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "100", "name": "Photineas 7lts", "size": "7 Litros", "priceNum": 20000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] }
+      {
+        "id": "11",
+        "name": "Aromáticas (Albahaca, Menta, Romero, etc.)",
+        "size": "Maceta M12",
+        "priceNum": 450,
+        "info": "Variedad de aromáticas frescas en maceta M12 desde $400.",
+        "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]
+      }
     ]
   }
 ]
