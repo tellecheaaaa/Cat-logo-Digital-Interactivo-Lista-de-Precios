@@ -97,9 +97,10 @@
             <div class="sidebar-title">Categorías</div>
             <ul class="sidebar-links">
                 <li><a href="#" onclick="setQuickFilter('all'); toggleSidebar();">🌿 Todos los Productos</a></li>
-                <li><a href="#" onclick="setQuickFilter('3l'); toggleSidebar();">🪴 Maceta N°3 (3L)</a></li>
-                <li><a href="#" onclick="setQuickFilter('5l'); toggleSidebar();">🌿 Maceta N°5 (5L)</a></li>
-                <li><a href="#" onclick="setQuickFilter('promos'); toggleSidebar();">🔥 Descuentos (20% OFF)</a></li>
+                <li><a href="#" onclick="setQuickFilter('interior'); toggleSidebar();">🪴 Plantas de Interior</a></li>
+                <li><a href="#" onclick="setQuickFilter('frutales'); toggleSidebar();">🍊 Cítricos y Frutales</a></li>
+                <li><a href="#" onclick="setQuickFilter('cercos'); toggleSidebar();">🌴 Palmeras y Árboles</a></li>
+                <li><a href="#" onclick="setQuickFilter('florales'); toggleSidebar();">🌸 Plantines y Aromáticas</a></li>
             </ul>
         </div>
     </div>
@@ -109,12 +110,13 @@
     </header>
     <div class="container">
         <div class="promo-banner" id="promoBanner">🌿 <strong>PROMO 20% OFF:</strong> ¡Llevando 5 o más unidades iguales o combinadas, tenés un 20% de descuento en el total!</div>
-        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar planta o insumo...">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar planta o insumo..." oninput="renderCatalog(this.value)">
         <div class="quick-filters">
             <button class="filter-btn active" onclick="setQuickFilter('all', this)">🌿 Todos</button>
-            <button class="filter-btn" onclick="setQuickFilter('3l', this)">🪴 Maceta 3L</button>
-            <button class="filter-btn" onclick="setQuickFilter('5l', this)">🌿 Maceta 5L</button>
-            <button class="filter-btn" onclick="setQuickFilter('promos', this)">🔥 Ofertas</button>
+            <button class="filter-btn" onclick="setQuickFilter('interior', this)">🪴 Interior</button>
+            <button class="filter-btn" onclick="setQuickFilter('frutales', this)">🍊 Frutales</button>
+            <button class="filter-btn" onclick="setQuickFilter('cercos', this)">🌴 Palmeras</button>
+            <button class="filter-btn" onclick="setQuickFilter('florales', this)">🌸 Plantines</button>
         </div>
         <div id="catalog"></div>
     </div>
@@ -129,7 +131,7 @@
         </div>
         <div class="cart-modal-body" id="cartModalBody"></div>
         <div class="cart-modal-footer">
-            <button class="btn-whatsapp-submit" id="sendOrderBtn">🟢 Enviar Pedido por WhatsApp</button>
+            <button class="btn-whatsapp-submit" id="sendOrderBtn" onclick="sendWhatsAppOrder()">🟢 Enviar Pedido por WhatsApp</button>
         </div>
     </div>
     <script>
@@ -137,6 +139,10 @@
         const DEFAULT_IMAGE = "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80";
         let catalogData = []; let cart = {}; let currentFilter = 'all';
         
+        window.onload = function() {
+            loadProducts();
+        };
+
         async function loadProducts() {
             try {
                 const response = await fetch('productos.json');
@@ -153,22 +159,20 @@
         
         function setQuickFilter(category, btn) {
             currentFilter = category;
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            if (btn) btn.classList.add('active');
-            document.getElementById('promoBanner').style.display = (category === 'promos') ? 'block' : 'none';
+            if (btn) {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            }
             renderCatalog(document.getElementById('searchInput').value);
         }
 
         function renderCatalog(searchQuery = '') {
             const container = document.getElementById('catalog'); container.innerHTML = "";
             catalogData.forEach(cat => {
-                if (currentFilter === 'promos' && !cat.items.some(i => i.hasPromo)) return;
-                if (currentFilter !== 'all' && currentFilter !== 'promos' && cat.tag !== currentFilter) return;
+                if (currentFilter !== 'all' && cat.tag !== currentFilter) return;
 
                 let itemsToRender = cat.items.filter(item => {
-                    const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase());
-                    if (currentFilter === 'promos') return matchesSearch && item.hasPromo;
-                    return matchesSearch;
+                    return item.name.toLowerCase().includes(searchQuery.toLowerCase());
                 });
 
                 if (itemsToRender.length === 0) return;
@@ -198,28 +202,17 @@
                     imgHtml += '</div>';
 
                     let infoHtml = item.info ? `<div class="card-info-text">💡 ${item.info}</div>` : '';
-
                     let priceHtml = `<div class="card-price">${formatCurrency(item.priceNum)}</div>`;
-                    let badgeHtml = '';
-                    if (item.hasPromo && item.oldPriceNum) {
-                        badgeHtml = `<span class="promo-tag-badge">🔥 20% OFF</span>`;
-                        priceHtml = `
-                            <div class="card-price-container">
-                                <span class="card-price">${formatCurrency(item.priceNum)}</span>
-                                <span class="card-old-price">${formatCurrency(item.oldPriceNum)}</span>
-                            </div>`;
-                    }
 
                     card.innerHTML = imgHtml + `
                         <div class="card-body">
-                            ${badgeHtml}
                             <div class="card-title">${item.name}</div>
                             <div class="card-subtitle">${item.size}</div>
                             ${infoHtml}${priceHtml}
                             <div class="quantity-control" onclick="event.stopPropagation()">
-                                <button class="btn-qty" onclick="updateQty('${item.id}', '${item.name}',${item.priceNum}, -1)">-</button>
+                                <button class="btn-qty" onclick="updateQty('${item.id}', '${item.name}', ${item.priceNum}, -1)">-</button>
                                 <span style="font-weight:600; font-size:0.88rem;" id="qty-${item.id}">${currentQty}</span>
-                                <button class="btn-qty" onclick="updateQty('${item.id}', '${item.name}',${item.priceNum}, 1)">+</button>
+                                <button class="btn-qty" onclick="updateQty('${item.id}', '${item.name}', ${item.priceNum}, 1)">+</button>
                             </div>
                         </div>`;
                     grid.appendChild(card);
@@ -271,7 +264,6 @@
             const modalBody = document.getElementById('cartModalBody'); modalBody.innerHTML = "";
             
             const totalUnits = items.reduce((sum, i) => sum + i.qty, 0);
-            const applyGlobalPromo = totalUnits >= 5;
 
             if (items.length === 0) {
                 modalBody.innerHTML = `<div style="text-align: center; color: #888; padding: 20px 0;">El carrito está vacío</div>`;
@@ -285,6 +277,40 @@
                                 <b>${item.name}</b><br>
                                 <small>${formatCurrency(item.priceNum)} c/u</small>
                                 <div class="cart-item-controls">
-                                    <button class="cart-btn-qty" onclick="updateQty('${item.id}', '${item.name}',${item.priceNum}, -1)">-</button>
+                                    <button class="cart-btn-qty" onclick="updateQty('${item.id}', '${item.name}', ${item.priceNum}, -1)">-</button>
                                     <span style="font-weight:600;">${item.qty}</span>
-                                    <button class="cart
+                                    <button class="cart-btn-qty" onclick="updateQty('${item.id}', '${item.name}', ${item.priceNum}, 1)">+</button>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <b>${formatCurrency(itemTotal)}</b><br>
+                                <button class="cart-btn-delete" onclick="removeFromCart('${item.id}')">🗑</button>
+                            </div>
+                        </div>`;
+                });
+            }
+
+            document.getElementById('cartCount').innerText = totalUnits;
+            document.getElementById('cartTotalBtn').innerText = formatCurrency(subtotal);
+        }
+
+        function sendWhatsAppOrder() {
+            const items = Object.values(cart);
+            if (items.length === 0) {
+                alert("Tu carrito está vacío.");
+                return;
+            }
+            let text = "Hola! Vivero La Esperanza, quiero hacer el siguiente pedido:\n\n";
+            let total = 0;
+            items.forEach(item => {
+                let sub = item.priceNum * item.qty;
+                total += sub;
+                text += `• ${item.qty}x ${item.name} (${formatCurrency(item.priceNum)} c/u) = *${formatCurrency(sub)}*\n`;
+            });
+            text += `\n*Total a abonar: ${formatCurrency(total)}*`;
+            const encoded = encodeURIComponent(text);
+            window.open(`https://wa.me/${PHONE_NUMBER}?text=${encoded}`, '_blank');
+        }
+    </script>
+</body>
+</html>
