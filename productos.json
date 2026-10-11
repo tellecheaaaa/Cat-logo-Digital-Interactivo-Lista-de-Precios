@@ -1,113 +1,16 @@
 [
   {
-    "category": "🪴 Plantas de Interior y Variedades",
+    "category": "🌿 Plantas de Prueba",
     "tag": "interior",
     "items": [
       {
         "id": "1",
-        "name": "Aglonema",
-        "size": "Variedad M12 / M18 / M24",
-        "priceNum": 15000,
-        "info": "Disponible en varias medidas (Ruby M12: $15.000, Pataya M18: $26.000, Fredman M24: $34.000)",
-        "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"]
-      },
-      {
-        "id": "2",
-        "name": "Anturium",
-        "size": "Maceta M12 / M15 / M17",
-        "priceNum": 12000,
-        "info": "Elegí tu medida: M12 ($12.000), M15 ($18.000) o M17 ($20.000).",
-        "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"]
-      },
-      {
-        "id": "3",
-        "name": "Alocacia",
-        "size": "M12 / M13 / 10 Litros",
-        "priceNum": 12000,
-        "info": "Variedades Amazonica M12 ($12.000), Black M13 ($12.500) y 10 Litros ($13.000).",
-        "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]
-      },
-      {
-        "id": "4",
-        "name": "Crotón",
-        "size": "M12 / M15 / 3 Litros",
-        "priceNum": 3000,
-        "info": "Variedades en M12 ($3.000), 3L ($7.000) y M15 Petra/Monalisa ($11.500).",
-        "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"]
-      },
-      {
-        "id": "5",
-        "name": "Calathea",
-        "size": "M12 / M15 / M17 / 3L / 5L",
-        "priceNum": 4800,
-        "info": "Macova y Stromanthe en diferentes tamaños desde $4.800.",
-        "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"]
-      },
-      {
-        "id": "6",
-        "name": "Palo de Agua",
-        "size": "M12 / 3L / 7L / 15L / 20L",
-        "priceNum": 3800,
-        "info": "Desde M12 ($3.800) hasta ejemplares grandes de 20L ($40.000).",
-        "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"]
-      },
-      {
-        "id": "7",
-        "name": "Strelitzia (Ave del Paraíso)",
-        "size": "3L / 7L / 10L / 15L / 20L+",
-        "priceNum": 15000,
-        "info": "Nicolai y Reginae en varios tamaños y ejemplares de gran porte.",
-        "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]
-      }
-    ]
-  },
-  {
-    "category": "🍊 Cítricos y Frutales",
-    "tag": "frutales",
-    "items": [
-      {
-        "id": "8",
-        "name": "Cítricos",
-        "size": "7L / Bolsita Tubo / 20L",
-        "priceNum": 12000,
-        "info": "Limón, Mandarina, Naranja y Pomelo. Bolsita tubo ($12.000), 7L ($14.000), 20L ($38.000).",
-        "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"]
-      },
-      {
-        "id": "9",
-        "name": "Arándano",
-        "size": "M14 / 5 Litros",
-        "priceNum": 6800,
-        "info": "Presentación M14 ($6.800) y 5 Litros ($9.000).",
-        "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"]
-      }
-    ]
-  },
-  {
-    "category": "🌴 Palmeras y Árboles",
-    "tag": "cercos",
-    "items": [
-      {
-        "id": "10",
-        "name": "Palmera Pindo / Fénix",
-        "size": "Variados tamaños",
-        "priceNum": 8000,
-        "info": "Desde pequeños ejemplares hasta troncos grandes de 3 metros.",
-        "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"]
-      }
-    ]
-  },
-  {
-    "category": "🌸 Plantines y Aromáticas",
-    "tag": "florales",
-    "items": [
-      {
-        "id": "11",
-        "name": "Aromáticas (Albahaca, Menta, Romero, etc.)",
-        "size": "Maceta M12",
-        "priceNum": 450,
-        "info": "Variedad de aromáticas frescas en maceta M12 desde $400.",
-        "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]
+        "name": "Aglonema pataya",
+        "size": "M18",
+        "priceNum": 26000,
+        "imgs": [
+          "https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"
+        ]
       }
     ]
   }
