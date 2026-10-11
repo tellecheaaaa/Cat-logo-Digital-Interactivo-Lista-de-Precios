@@ -63,4 +63,280 @@
         .btn-qty { width: 28px; height: 28px; border: 1px solid var(--border-color); background: #ffffff; border-radius: 6px; font-weight: 600; cursor: pointer; }
         
         .cart-float-btn { position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: #ffffff; border: none; border-radius: 50px; padding: 12px 22px; font-weight: 600; font-size: 0.92rem; box-shadow: 0 8px 20px rgba(0,0,0,0.2); cursor: pointer; z-index: 1000; display: flex; align-items: center; gap: 10px; }
-        .cart-badge-count { background: var(--
+        .cart-badge-count { background: var(--accent); color: #ffffff; border-radius: 12px; padding: 2px 8px; font-size: 0.8rem; }
+        .cart-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 1400; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+        .cart-modal-overlay.active { opacity: 1; visibility: visible; }
+        .cart-modal { position: fixed; bottom: -100%; left: 50%; transform: translateX(-50%); width: 90%; max-width: 450px; background: #ffffff; border-radius: 20px 20px 0 0; z-index: 1500; box-shadow: 0 -10px 30px rgba(0,0,0,0.15); transition: bottom 0.35s ease; overflow: hidden; max-height: 85vh; display: flex; flex-direction: column; }
+        .cart-modal.active { bottom: 0; }
+        .cart-modal-header { padding: 18px 20px; background: var(--primary); color: #ffffff; display: flex; justify-content: space-between; align-items: center; }
+        .cart-modal-body { padding: 16px 20px; overflow-y: auto; flex-grow: 1; }
+        
+        .cart-item-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px dashed var(--border-color); font-size: 0.88rem; gap: 10px; }
+        .cart-item-controls { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+        .cart-btn-qty { width: 24px; height: 24px; border: 1px solid var(--border-color); background: #f3f4f6; border-radius: 4px; font-weight: 600; cursor: pointer; font-size: 0.8rem; }
+        .cart-btn-delete { background: none; border: none; color: #ef4444; cursor: pointer; font-size: 1.1rem; padding: 2px 6px; }
+
+        .cart-modal-footer { padding: 16px 20px; background: #f9fafb; }
+        .btn-whatsapp-submit { width: 100%; background-color: var(--accent); color: white; border: none; padding: 12px; border-radius: 10px; font-weight: 600; font-size: 0.95rem; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="top-navbar">
+        <button class="menu-toggle-btn" onclick="toggleSidebar()"><span>☰</span> Menú</button>
+        <div class="nav-brand">Vivero La Esperanza</div>
+        <div style="width: 60px;"></div>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <div class="sidebar-menu" id="sidebarMenu">
+        <button class="sidebar-close-btn" onclick="toggleSidebar()">✕</button>
+        <div class="sidebar-section">
+            <div class="sidebar-title">Quiénes Somos</div>
+            <p class="sidebar-about">En <strong>Vivero La Esperanza</strong> cultivamos plantas de interior, exterior y ornamentales.</p>
+        </div>
+        <div class="sidebar-section">
+            <div class="sidebar-title">Categorías</div>
+            <ul class="sidebar-links">
+                <li><a href="#" onclick="setQuickFilter('all'); toggleSidebar();">🌿 Todos los Productos</a></li>
+                <li><a href="#" onclick="setQuickFilter('3l'); toggleSidebar();">🪴 Maceta N°3 (3L)</a></li>
+                <li><a href="#" onclick="setQuickFilter('5l'); toggleSidebar();">🌿 Maceta N°5 (5L)</a></li>
+                <li><a href="#" onclick="setQuickFilter('promos'); toggleSidebar();">🔥 Descuentos (20% OFF)</a></li>
+            </ul>
+        </div>
+    </div>
+    <header>
+        <h1>Vivero La Esperanza</h1>
+        <p class="subtitle">Catálogo Digital Interactivo</p>
+    </header>
+    <div class="container">
+        <div class="promo-banner" id="promoBanner">🌿 <strong>PROMO 20% OFF:</strong> ¡Llevando 5 o más unidades iguales o combinadas, tenés un 20% de descuento en el total!</div>
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar planta o insumo...">
+        <div class="quick-filters">
+            <button class="filter-btn active" onclick="setQuickFilter('all', this)">🌿 Todos</button>
+            <button class="filter-btn" onclick="setQuickFilter('3l', this)">🪴 Maceta 3L</button>
+            <button class="filter-btn" onclick="setQuickFilter('5l', this)">🌿 Maceta 5L</button>
+            <button class="filter-btn" onclick="setQuickFilter('promos', this)">🔥 Ofertas</button>
+        </div>
+        <div id="catalog"></div>
+    </div>
+    <button class="cart-float-btn" onclick="toggleCartModal()">
+        <span>🛒 Pedido</span> <span class="cart-badge-count" id="cartCount">0</span> <span id="cartTotalBtn">$0</span>
+    </button>
+    <div class="cart-modal-overlay" id="cartModalOverlay" onclick="toggleCartModal()"></div>
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-header">
+            <h3>🛒 Tu Pedido</h3>
+            <button style="background:none; border:none; color:white; font-size:1.3rem; cursor:pointer;" onclick="toggleCartModal()">✕</button>
+        </div>
+        <div class="cart-modal-body" id="cartModalBody"></div>
+        <div class="cart-modal-footer">
+            <button class="btn-whatsapp-submit" id="sendOrderBtn">🟢 Enviar Pedido por WhatsApp</button>
+        </div>
+    </div>
+    <script>
+        const PHONE_NUMBER = "5491130346893";
+        const DEFAULT_IMAGE = "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80";
+        let catalogData = []; let cart = {}; let currentFilter = 'all';
+        
+        async function loadProducts() {
+            try {
+                const response = await fetch('productos.json');
+                if (!response.ok) throw new Error();
+                catalogData = await response.json();
+                renderCatalog();
+            } catch (error) {
+                document.getElementById('catalog').innerHTML = `<div style="text-align: center; padding: 40px; color: #ef4444; font-weight: 600;">⚠ Verificá que 'productos.json' esté en el repositorio.</div>`;
+            }
+        }
+        function formatCurrency(val) { return "$" + Math.round(val).toLocaleString('es-AR'); }
+        function toggleSidebar() { document.getElementById('sidebarMenu').classList.toggle('active'); document.getElementById('sidebarOverlay').classList.toggle('active'); }
+        function toggleCartModal() { document.getElementById('cartModal').classList.toggle('active'); document.getElementById('cartModalOverlay').classList.toggle('active'); }
+        
+        function setQuickFilter(category, btn) {
+            currentFilter = category;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            document.getElementById('promoBanner').style.display = (category === 'promos') ? 'block' : 'none';
+            renderCatalog(document.getElementById('searchInput').value);
+        }
+
+        function renderCatalog(searchQuery = '') {
+            const container = document.getElementById('catalog'); container.innerHTML = "";
+            catalogData.forEach(cat => {
+                if (currentFilter === 'promos' && !cat.items.some(i => i.hasPromo)) return;
+                if (currentFilter !== 'all' && currentFilter !== 'promos' && cat.tag !== currentFilter) return;
+
+                let itemsToRender = cat.items.filter(item => {
+                    const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase());
+                    if (currentFilter === 'promos') return matchesSearch && item.hasPromo;
+                    return matchesSearch;
+                });
+
+                if (itemsToRender.length === 0) return;
+                
+                const catTitle = document.createElement('h2'); catTitle.className = 'category-title'; catTitle.innerText = cat.category;
+                container.appendChild(catTitle);
+                const grid = document.createElement('div'); grid.className = 'grid';
+                
+                itemsToRender.forEach(item => {
+                    const currentQty = cart[item.id] ? cart[item.id].qty : 0;
+                    const card = document.createElement('div'); card.className = 'card';
+                    
+                    let images = (item.imgs && item.imgs.length > 0) ? item.imgs : [DEFAULT_IMAGE];
+                    let imgHtml = '<div class="card-img-container" id="img-container-' + item.id + '">';
+                    images.forEach((img, idx) => {
+                        imgHtml += `<img src="${img}" class="${idx === 0 ? 'active' : ''}" data-index="${idx}">`;
+                    });
+                    if (images.length > 1) {
+                        imgHtml += `<button class="gallery-btn prev" onclick="changeSlide('${item.id}', -1, event)">❮</button>`;
+                        imgHtml += `<button class="gallery-btn next" onclick="changeSlide('${item.id}', 1, event)">❯</button>`;
+                        imgHtml += '<div class="gallery-dots">';
+                        images.forEach((_, idx) => {
+                            imgHtml += `<span class="dot ${idx === 0 ? 'active' : ''}" data-dot="${idx}"></span>`;
+                        });
+                        imgHtml += '</div>';
+                    }
+                    imgHtml += '</div>';
+
+                    let infoHtml = item.info ? `<div class="card-info-text">💡 ${item.info}</div>` : '';
+
+                    let priceHtml = `<div class="card-price">${formatCurrency(item.priceNum)}</div>`;
+                    let badgeHtml = '';
+                    if (item.hasPromo && item.oldPriceNum) {
+                        badgeHtml = `<span class="promo-tag-badge">🔥 20% OFF</span>`;
+                        priceHtml = `
+                            <div class="card-price-container">
+                                <span class="card-price">${formatCurrency(item.priceNum)}</span>
+                                <span class="card-old-price">${formatCurrency(item.oldPriceNum)}</span>
+                            </div>`;
+                    }
+
+                    card.innerHTML = imgHtml + `
+                        <div class="card-body">
+                            ${badgeHtml}
+                            <div class="card-title">${item.name}</div>
+                            <div class="card-subtitle">${item.size}</div>
+                            ${infoHtml}
+                            ${priceHtml}
+                            <div class="quantity-control" onclick="event.stopPropagation()">
+                                <button class="btn-qty" onclick="updateQty('${item.id}', '${item.name}', ${item.priceNum}, -1)">-</button>
+                                <span style="font-weight:600; font-size:0.88rem;" id="qty-${item.id}">${currentQty}</span>
+                                <button class="btn-qty" onclick="updateQty('${item.id}', '${item.name}', ${item.priceNum}, 1)">+</button>
+                            </div>
+                        </div>`;
+                    grid.appendChild(card);
+                });
+                container.appendChild(grid);
+            });
+        }
+
+        function changeSlide(id, direction, event) {
+            event.stopPropagation();
+            const container = document.getElementById('img-container-' + id);
+            const imgs = container.querySelectorAll('img');
+            const dots = container.querySelectorAll('.dot');
+            let currentIndex = 0;
+            
+            imgs.forEach((img, idx) => { if (img.classList.contains('active')) currentIndex = idx; });
+            imgs[currentIndex].classList.remove('active');
+            if(dots.length > 0) dots[currentIndex].classList.remove('active');
+            
+            let newIndex = currentIndex + direction;
+            if (newIndex >= imgs.length) newIndex = 0;
+            if (newIndex < 0) newIndex = imgs.length - 1;
+            
+            imgs[newIndex].classList.add('active');
+            if(dots.length > 0) dots[newIndex].classList.add('active');
+        }
+
+        function updateQty(id, name, priceNum, change) {
+            if (!cart[id]) cart[id] = { name, priceNum, qty: 0, id };
+            cart[id].qty += change;
+            if (cart[id].qty <= 0) delete cart[id];
+            
+            const qtyElem = document.getElementById(`qty-${id}`);
+            if (qtyElem) qtyElem.innerText = cart[id] ? cart[id].qty : 0;
+            
+            updateCartSummary();
+        }
+
+        function removeFromCart(id) {
+            delete cart[id];
+            const qtyElem = document.getElementById(`qty-${id}`);
+            if (qtyElem) qtyElem.innerText = 0;
+            updateCartSummary();
+        }
+
+        function updateCartSummary() {
+            const items = Object.values(cart);
+            let subtotal = 0;
+            const modalBody = document.getElementById('cartModalBody'); modalBody.innerHTML = "";
+            
+            const totalUnits = items.reduce((sum, i) => sum + i.qty, 0);
+            const applyGlobalPromo = totalUnits >= 5;
+
+            if (items.length === 0) {
+                modalBody.innerHTML = `<div style="text-align: center; color: #888; padding: 20px 0;">El carrito está vacío</div>`;
+            } else {
+                items.forEach(item => {
+                    let itemTotal = item.priceNum * item.qty;
+                    subtotal += itemTotal;
+                    modalBody.innerHTML += `
+                        <div class="cart-item-row">
+                            <div style="flex-grow: 1;">
+                                <b>${item.name}</b><br>
+                                <small>${formatCurrency(item.priceNum)} c/u</small>
+                                <div class="cart-item-controls">
+                                    <button class="cart-btn-qty" onclick="updateQty('${item.id}', '${item.name}', ${item.priceNum}, -1)">-</button>
+                                    <span style="font-weight:600;">${item.qty}</span>
+                                    <button class="cart-btn-qty" onclick="updateQty('${item.id}', '${item.name}', ${item.priceNum}, 1)">+</button>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <b>${formatCurrency(itemTotal)}</b><br>
+                                <button class="cart-btn-delete" onclick="removeFromCart('${item.id}')" title="Eliminar">🗑</button>
+                            </div>
+                        </div>`;
+                });
+
+                if (applyGlobalPromo) {
+                    let discount = subtotal * 0.20;
+                    let finalTotal = subtotal - discount;
+                    modalBody.innerHTML += `
+                        <div style="margin-top: 12px; padding: 10px; background: #fffbeb; border-radius: 8px; border: 1px dashed #fcd34d; font-size: 0.85rem; color: #92400e;">
+                            🔥 <b>¡Promo 20% OFF aplicada por cantidad!</b><br>
+                            Descuento: -${formatCurrency(discount)}<br>
+                            <b>Total con descuento: ${formatCurrency(finalTotal)}</b>
+                        </div>`;
+                }
+            }
+
+            const finalDisplayTotal = applyGlobalPromo ? (subtotal * 0.80) : subtotal;
+            document.getElementById('cartCount').innerText = totalUnits;
+            document.getElementById('cartTotalBtn').innerText = formatCurrency(finalDisplayTotal);
+        }
+
+        document.getElementById('searchInput').addEventListener('input', (e) => renderCatalog(e.target.value));
+        document.getElementById('sendOrderBtn').addEventListener('click', () => {
+            const items = Object.values(cart);
+            if (items.length === 0) { alert("Seleccioná al menos un producto."); return; }
+            let totalUnits = items.reduce((sum, i) => sum + i.qty, 0);
+            let subtotal = items.reduce((sum, i) => sum + (i.priceNum * i.qty), 0);
+            let applyPromo = totalUnits >= 5;
+
+            let text = "Hola Vivero La Esperanza! Quisiera hacer este pedido:\n\n";
+            items.forEach(i => text += `• ${i.qty}x ${i.name} (${formatCurrency(i.priceNum * i.qty)})\n`);
+            text += `\nSubtotal: ${formatCurrency(subtotal)}`;
+            if (applyPromo) {
+                text += `\n🔥 Descuento 20% OFF por cantidad: -${formatCurrency(subtotal * 0.2)}`;
+                text += `\n*Total Final: ${formatCurrency(subtotal * 0.8)}*`;
+            } else {
+                text += `\n*Total Final: ${formatCurrency(subtotal)}*`;
+            }
+
+            window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+        });
+
+        loadProducts();
+    </script>
+</body>
+</html>
