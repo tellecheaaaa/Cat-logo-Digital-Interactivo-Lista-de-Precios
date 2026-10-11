@@ -29,7 +29,6 @@
         h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 6px; }
         .subtitle { font-size: 0.82rem; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.15em; }
         .container { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
-        .promo-banner { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; border-radius: 12px; padding: 12px 18px; margin-bottom: 20px; text-align: center; font-size: 0.88rem; font-weight: 500; display: none; }
         .search-input { width: 100%; padding: 13px 20px; border-radius: 30px; border: 1px solid var(--border-color); font-size: 0.95rem; outline: none; box-shadow: 0 2px 8px rgba(0,0,0,0.03); margin-bottom: 16px; }
         .quick-filters { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 25px; }
         .filter-btn { background: #ffffff; border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all 0.2s; }
@@ -52,12 +51,7 @@
         .card-body { padding: 14px; display: flex; flex-direction: column; flex-grow: 1; }
         .card-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 2px; }
         .card-subtitle { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 6px; }
-        .card-info-text { font-size: 0.75rem; color: #4b5563; background: #f3f4f6; padding: 6px 8px; border-radius: 6px; margin-bottom: 10px; line-height: 1.3; }
-        
-        .card-price-container { display: flex; align-items: baseline; gap: 8px; margin-top: auto; }
-        .card-price { font-size: 1.1rem; font-weight: 700; color: var(--primary); }
-        .card-old-price { font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through; }
-        .promo-tag-badge { font-size: 0.7rem; background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px; font-weight: 700; display: inline-block; margin-bottom: 6px; }
+        .card-price { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-top: auto; }
 
         .quantity-control { display: flex; align-items: center; justify-content: space-between; background: #f9fafb; border-radius: 8px; padding: 4px; margin-top: 10px; border: 1px solid var(--border-color); }
         .btn-qty { width: 28px; height: 28px; border: 1px solid var(--border-color); background: #ffffff; border-radius: 6px; font-weight: 600; cursor: pointer; }
@@ -109,7 +103,6 @@
         <p class="subtitle">Catálogo Digital Interactivo</p>
     </header>
     <div class="container">
-        <div class="promo-banner" id="promoBanner">🌿 <strong>PROMO 20% OFF:</strong> ¡Llevando 5 o más unidades iguales o combinadas, tenés un 20% de descuento en el total!</div>
         <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar planta o insumo..." oninput="renderCatalog(this.value)">
         <div class="quick-filters">
             <button class="filter-btn active" onclick="setQuickFilter('all', this)">🌿 Todos</button>
@@ -131,28 +124,51 @@
         </div>
         <div class="cart-modal-body" id="cartModalBody"></div>
         <div class="cart-modal-footer">
-            <button class="btn-whatsapp-submit" id="sendOrderBtn" onclick="sendWhatsAppOrder()">🟢 Enviar Pedido por WhatsApp</button>
+            <button class="btn-whatsapp-submit" onclick="sendWhatsAppOrder()">🟢 Enviar Pedido por WhatsApp</button>
         </div>
     </div>
+
     <script>
         const PHONE_NUMBER = "5491130346893";
         const DEFAULT_IMAGE = "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80";
-        let catalogData = []; let cart = {}; let currentFilter = 'all';
-        
+        let cart = {}; let currentFilter = 'all';
+
+        // UNA SOLA PLANTA DE PRUEBA POR CADA APARTADO
+        const catalogData = [
+            {
+                "category": "🌿 Plantas de Interior",
+                "tag": "interior",
+                "items": [
+                    { "id": "1", "name": "Aglonema pataya", "size": "M18", "priceNum": 26000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] }
+                ]
+            },
+            {
+                "category": "🍊 Cítricos y Frutales",
+                "tag": "frutales",
+                "items": [
+                    { "id": "2", "name": "Cítricos", "size": "7 Litros", "priceNum": 14000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] }
+                ]
+            },
+            {
+                "category": "🌴 Palmeras y Árboles",
+                "tag": "cercos",
+                "items": [
+                    { "id": "3", "name": "Areka", "size": "3 Litros", "priceNum": 13000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] }
+                ]
+            },
+            {
+                "category": "🌸 Plantines y Aromáticas",
+                "tag": "florales",
+                "items": [
+                    { "id": "4", "name": "Crisantemo", "size": "M12", "priceNum": 1200, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] }
+                ]
+            }
+        ];
+
         window.onload = function() {
-            loadProducts();
+            renderCatalog();
         };
 
-        async function loadProducts() {
-            try {
-                const response = await fetch('productos.json');
-                if (!response.ok) throw new Error();
-                catalogData = await response.json();
-                renderCatalog();
-            } catch (error) {
-                document.getElementById('catalog').innerHTML = `<div style="text-align: center; padding: 40px; color: #ef4444; font-weight: 600;">⚠ Verificá que 'productos.json' esté en el repositorio.</div>`;
-            }
-        }
         function formatCurrency(val) { return "$" + Math.round(val).toLocaleString('es-AR'); }
         function toggleSidebar() { document.getElementById('sidebarMenu').classList.toggle('active'); document.getElementById('sidebarOverlay').classList.toggle('active'); }
         function toggleCartModal() { document.getElementById('cartModal').classList.toggle('active'); document.getElementById('cartModalOverlay').classList.toggle('active'); }
@@ -201,14 +217,11 @@
                     }
                     imgHtml += '</div>';
 
-                    let infoHtml = item.info ? `<div class="card-info-text">💡 ${item.info}</div>` : '';
-                    let priceHtml = `<div class="card-price">${formatCurrency(item.priceNum)}</div>`;
-
                     card.innerHTML = imgHtml + `
                         <div class="card-body">
                             <div class="card-title">${item.name}</div>
                             <div class="card-subtitle">${item.size}</div>
-                            ${infoHtml}${priceHtml}
+                            <div class="card-price">${formatCurrency(item.priceNum)}</div>
                             <div class="quantity-control" onclick="event.stopPropagation()">
                                 <button class="btn-qty" onclick="updateQty('${item.id}', '${item.name}', ${item.priceNum}, -1)">-</button>
                                 <span style="font-weight:600; font-size:0.88rem;" id="qty-${item.id}">${currentQty}</span>
@@ -262,7 +275,6 @@
             const items = Object.values(cart);
             let subtotal = 0;
             const modalBody = document.getElementById('cartModalBody'); modalBody.innerHTML = "";
-            
             const totalUnits = items.reduce((sum, i) => sum + i.qty, 0);
 
             if (items.length === 0) {
