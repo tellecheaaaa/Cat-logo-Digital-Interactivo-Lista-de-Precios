@@ -1,46 +1,145 @@
 [
   {
-    "category": "Plantas Maceta N°3 (3L)",
+    "category": "Plantas de Interior y Exterior (Maceta N°3 / 3L)",
     "tag": "3l",
     "items": [
       {
         "id": "p1",
-        "name": "Monstera Deliciosa",
+        "name": "Sisus",
         "size": "Maceta N°3 (3L)",
-        "priceNum": 6800,
-        "oldPriceNum": 8500,
-        "hasPromo": true,
-        "info": "Requiere luz indirecta y riego moderado (1 vez por semana).",
-        "imgs": [
-          "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80",
-          "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"
-        ]
+        "priceNum": 12650,
+        "info": "Planta de interior colgante, requiere luz indirecta.",
+        "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"]
       },
       {
         "id": "p2",
-        "name": "Potus Común",
+        "name": "Singonio",
         "size": "Maceta N°3 (3L)",
-        "priceNum": 7000,
-        "info": "Ideal para interiores con buena iluminación.",
-        "imgs": [
-          "https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"
-        ]
+        "priceNum": 12650,
+        "info": "Fácil de cuidar, riego moderado.",
+        "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"]
+      },
+      {
+        "id": "p3",
+        "name": "Potus",
+        "size": "Maceta N°3 (3L)",
+        "priceNum": 12650,
+        "info": "Excelente purificador de aire para interiores.",
+        "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]
+      },
+      {
+        "id": "p4",
+        "name": "Palmera Fénix",
+        "size": "Maceta N°3 (3L)",
+        "priceNum": 12650,
+        "info": "Ideal para espacios luminosos o semicombra.",
+        "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"]
+      },
+      {
+        "id": "p5",
+        "name": "Monstera",
+        "size": "Maceta N°3 (3L)",
+        "priceNum": 11800,
+        "info": "Hojas grandes acorazonadas con aberturas características.",
+        "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"]
+      },
+      {
+        "id": "p6",
+        "name": "Palo de Agua",
+        "size": "Maceta N°3 (3L)",
+        "priceNum": 11800,
+        "info": "Tronco fuerte y hojas verdes brillantes.",
+        "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]
+      },
+      {
+        "id": "p7",
+        "name": "Lengua de Suegra (Sansevieria)",
+        "size": "Maceta N°3 (3L)",
+        "priceNum": 10150,
+        "info": "Muy resistente, requiere muy poco riego.",
+        "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"]
+      },
+      {
+        "id": "p8",
+        "name": "Lavanda",
+        "size": "Maceta N°3 (3L)",
+        "priceNum": 5050,
+        "info": "Aromática de exterior, requiere pleno sol.",
+        "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"]
       }
     ]
   },
   {
-    "category": "Florales y Plantines",
+    "category": "Plantas Maceta N°5 (5L)",
+    "tag": "5l",
+    "items": [
+      {
+        "id": "p9",
+        "name": "Palo de Agua",
+        "size": "Maceta N°5 (5L)",
+        "priceNum": 15200,
+        "info": "Ejemplar de mayor desarrollo en 5 litros.",
+        "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]
+      },
+      {
+        "id": "p10",
+        "name": "Crotón",
+        "size": "Maceta N°5 (5L)",
+        "priceNum": 7600,
+        "info": "Follaje colorido con tonos rojizos y amarillos.",
+        "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"]
+      },
+      {
+        "id": "p11",
+        "name": "Anthurium",
+        "size": "Maceta N°5 (5L)",
+        "priceNum": 8450,
+        "info": "Flores decorativas duraderas de tono encendido.",
+        "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"]
+      }
+    ]
+  },
+  {
+    "category": "Florales y Maceta N°12",
     "tag": "florales",
     "items": [
       {
-        "id": "p3",
+        "id": "p12",
         "name": "Pensamiento",
         "size": "Maceta N°12",
         "priceNum": 2200,
-        "info": "Planta de exterior resistente al sol pleno.",
-        "imgs": [
-          "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"
-        ]
+        "info": "Flor de estación resistente al frío.",
+        "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"]
+      },
+      {
+        "id": "p13",
+        "name": "Gazania",
+        "size": "Maceta N°12",
+        "priceNum": 2200,
+        "info": "Flores llamativas que abren con el sol.",
+        "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"]
+      },
+      {
+        "id": "p14",
+        "name": "Suculentas (Variadas)",
+        "size": "Maceta chica",
+        "priceNum": 2050,
+        "info": "Bajo requerimiento de agua, ideales para interior luminoso.",
+        "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]
+      }
+    ]
+  },
+  {
+    "category": "Insumos y Tierra",
+    "tag": "insumos",
+    "items": [
+      {
+        "id": "p15",
+        "name": "Tierra Fértil",
+        "size": "Bolsa",
+        "priceNum": 13500,
+        "info": "Sustrato preparado para macetas y huerta.",
+        "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"]
       }
     ]
   }
