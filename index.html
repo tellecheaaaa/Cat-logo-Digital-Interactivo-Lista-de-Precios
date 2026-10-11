@@ -36,17 +36,15 @@
         .category-title { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--primary); margin: 30px 0 15px 0; border-bottom: 2px solid var(--primary); padding-bottom: 4px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
         
-        /* Tarjeta con efecto hover para expandir detalles y fotos */
         .card { background: var(--card-bg); border-radius: 14px; border: 1px solid var(--border-color); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.25s ease, box-shadow 0.25s ease; position: relative; }
         .card:hover { transform: translateY(-6px); box-shadow: 0 14px 25px rgba(0,0,0,0.1); }
         
         .card-img-container { position: relative; width: 100%; height: 160px; background: #f3f4f6; overflow: hidden; transition: height 0.3s ease; }
-        .card:hover .card-img-container { height: 190px; } /* Se agranda sutilmente al pasar el mouse */
+        .card:hover .card-img-container { height: 190px; }
         
         .card-img-container img { width: 100%; height: 100%; object-fit: cover; display: none; transition: opacity 0.3s ease; }
         .card-img-container img.active { display: block; }
         
-        /* Botones de galería visibles u operables */
         .gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; padding: 6px 10px; cursor: pointer; font-size: 0.85rem; border-radius: 50%; z-index: 2; transition: background 0.2s; }
         .gallery-btn:hover { background: rgba(0,0,0,0.8); }
         .gallery-btn.prev { left: 8px; }
@@ -60,7 +58,6 @@
         .card-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 2px; }
         .card-subtitle { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 6px; }
         
-        /* Descripción desplegable al pasar el mouse */
         .card-description { font-size: 0.8rem; color: #4b5563; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease, opacity 0.3s ease, margin-bottom 0.3s ease; line-height: 1.4; }
         .card:hover .card-description { max-height: 80px; opacity: 1; margin-bottom: 8px; }
 
@@ -85,10 +82,8 @@
         .cart-item-controls { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
         .cart-btn-qty { width: 24px; height: 24px; border: 1px solid var(--border-color); background: #f3f4f6; border-radius: 4px; font-weight: 600; cursor: pointer; font-size: 0.8rem; }
         
-        /* Animación suave y moderna para el botón de borrar / tacho de basura */
         .cart-btn-delete { background: none; border: none; color: #ef4444; cursor: pointer; font-size: 1.1rem; padding: 4px 8px; border-radius: 50%; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); display: inline-flex; align-items: center; justify-content: center; }
         .cart-btn-delete:hover { background-color: #fee2e2; transform: scale(1.15) rotate(8deg); }
-        .cart-btn-delete:active { transform: scale(0.9); }
 
         .cart-modal-footer { padding: 16px 20px; background: #f9fafb; }
         .btn-whatsapp-submit { width: 100%; background-color: var(--accent); color: white; border: none; padding: 12px; border-radius: 10px; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: background 0.2s; }
@@ -154,75 +149,54 @@
         const DEFAULT_IMAGE = "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80";
         let cart = {}; let currentFilter = 'all';
 
-        // DATOS DE PRUEBA CON MULTIPLES FOTOS Y DESCRIPCIÓN DETALLADA
+        // CATÁLOGO COMPLETO BASADO EN TUS LISTAS OFICIALES
         const catalogData = [
             {
                 "category": "🌿 Plantas de Interior",
                 "tag": "interior",
                 "items": [
-                    { 
-                        "id": "1", 
-                        "name": "Aglonema pataya", 
-                        "size": "M18", 
-                        "priceNum": 26000, 
-                        "desc": "Hermosa planta de interior de fácil cuidado, ideal para espacios luminosos sin sol directo.",
-                        "imgs": [
-                            "https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80",
-                            "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80",
-                            "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"
-                        ] 
-                    }
+                    { "id": "1", "name": "Aglonema pataya", "size": "M18", "priceNum": 26000, "desc": "Planta de interior de gran valor ornamental, ideal para espacios luminosos.", "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "2", "name": "Aglonema fredman", "size": "M24", "priceNum": 34000, "desc": "Variedad espaciosa y vistosa de gran tamaño.", "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "3", "name": "Aglonema ruby", "size": "M12", "priceNum": 15000, "desc": "Tonos rojizos espectaculares para decoración interior.", "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "4", "name": "Alocacia", "size": "10 Litros", "priceNum": 13000, "desc": "Hojas grandes y llamativas con estilo tropical.", "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "5", "name": "Anturium", "size": "M12", "priceNum": 12000, "desc": "Clásica planta de interior con flores duraderas.", "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "6", "name": "Anturium", "size": "M15", "priceNum": 18000, "desc": "Tamaño mediano con excelente floración.", "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "7", "name": "Anturium", "size": "M17", "priceNum": 20000, "desc": "Ejemplar desarrollado ideal para regalar o lucir.", "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "8", "name": "Monstera", "size": "3 Litros", "priceNum": 6800, "desc": "Costilla de Adán, muy buscada por sus hojas fenestradas.", "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "9", "name": "Palo de Agua", "size": "3 Litros", "priceNum": 6000, "desc": "Fácil mantenimiento y aspecto elegante.", "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "10", "name": "Potus comun tutor", "size": "3 Litros", "priceNum": 7000, "desc": "Enredadera clásica de interiores resistente.", "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] }
                 ]
             },
             {
                 "category": "🍊 Cítricos y Frutales",
                 "tag": "frutales",
                 "items": [
-                    { 
-                        "id": "2", 
-                        "name": "Cítricos", 
-                        "size": "7 Litros", 
-                        "priceNum": 14000, 
-                        "desc": "Árbol frutal injertado en excelente estado sanitarios, listo para plantar en suelo o maceta grande.",
-                        "imgs": [
-                            "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80",
-                            "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"
-                        ] 
-                    }
+                    { "id": "11", "name": "Cítricos (Limón, Naranja, Mandarina, Pomelo)", "size": "7 Litros", "priceNum": 14000, "desc": "Variedades injertadas listas para producir frutos.", "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "12", "name": "Cítricos Grandes", "size": "20 Litros", "priceNum": 38000, "desc": "Árboles frutales desarrollados con troncos fuertes.", "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "13", "name": "Arándano", "size": "M14", "priceNum": 6800, "desc": "Arbusto productor de frutos rojos saludables.", "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "14", "name": "Durazno", "size": "10 Litros", "priceNum": 14800, "desc": "Frutal ideal para huertas y jardines hogareños.", "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "15", "name": "Mango", "size": "3 Litros", "priceNum": 14000, "desc": "Planta joven de mango con excelente adaptación.", "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] }
                 ]
             },
             {
                 "category": "🌴 Palmeras y Árboles",
                 "tag": "cercos",
                 "items": [
-                    { 
-                        "id": "3", 
-                        "name": "Areka", 
-                        "size": "3 Litros", 
-                        "priceNum": 13000, 
-                        "desc": "Palmera ornamental muy elegante que aporta un toque tropical a cualquier ambiente luminoso.",
-                        "imgs": [
-                            "https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80",
-                            "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"
-                        ] 
-                    }
+                    { "id": "16", "name": "Areka", "size": "3 Litros", "priceNum": 13000, "desc": "Palmera ornamental tropical de interior/exterior luminoso.", "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "17", "name": "Cica", "size": "3 Litros", "priceNum": 11000, "desc": "Especie muy resistente de lento crecimiento y gran presencia.", "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "18", "name": "Alcanfor", "size": "7 Litros", "priceNum": 13000, "desc": "Árbol forestal de hojas aromáticas.", "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "19", "name": "Palmera Pindo", "size": "7 Litros", "priceNum": 20000, "desc": "Palmera clásica autóctona muy elegante.", "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] }
                 ]
             },
             {
                 "category": "🌸 Plantines y Aromáticas",
                 "tag": "florales",
                 "items": [
-                    { 
-                        "id": "4", 
-                        "name": "Crisantemo", 
-                        "size": "M12", 
-                        "priceNum": 1200, 
-                        "desc": "Plantín floral de estación con pimpollos listos para dar una explosión de color en tu jardín.",
-                        "imgs": [
-                            "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80",
-                            "https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"
-                        ] 
-                    }
+                    { "id": "20", "name": "Crisantemo", "size": "M12", "priceNum": 1200, "desc": "Plantín floral con pimpollos listos para florecer.", "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "21", "name": "Pensamiento", "size": "M12", "priceNum": 850, "desc": "Flores resistentes de estación fría y templada.", "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "22", "name": "Albahaca", "size": "M12", "priceNum": 500, "desc": "Aromática indispensable para la cocina.", "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "23", "name": "Menta", "size": "M12", "priceNum": 400, "desc": "Hierba perenne de crecimiento rápido y aroma fresco.", "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
+                    { "id": "24", "name": "Tomate Cherry", "size": "M12", "priceNum": 500, "desc": "Plantín de huerta para producción de frutos pequeños.", "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] }
                 ]
             }
         ];
@@ -379,6 +353,7 @@
             }
             let text = "Hola! Vivero La Esperanza, quiero hacer el siguiente pedido:\n\n";
             let total = 0;
+            items.items.forEach(item => {}); // safe guard
             items.forEach(item => {
                 let sub = item.priceNum * item.qty;
                 total += sub;
