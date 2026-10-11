@@ -1,63 +1,47 @@
 [
   {
-    "category": "Plantas de Interior (Macetas y 3L)",
+    "category": "Plantas Maceta N°3 (3L)",
     "tag": "3l",
     "items": [
-      {"id": "int-1", "name": "Aglonema Pataya m18", "size": "Maceta N°18", "priceNum": 26000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "int-2", "name": "Aglonema Fredman m24", "size": "Maceta N°24", "priceNum": 34000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "int-3", "name": "Aglonema Ruby m12", "size": "Maceta N°12", "priceNum": 15000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "int-4", "name": "Alocacia", "size": "10 Litros", "priceNum": 13000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "int-5", "name": "Anturium", "size": "Maceta N°12", "priceNum": 12000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "int-6", "name": "Anturium", "size": "Maceta N°15", "priceNum": 18000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "int-7", "name": "Anturium", "size": "Maceta N°17", "priceNum": 20000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "int-8", "name": "Alocacia Amazónica", "size": "Maceta N°12", "priceNum": 12000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "int-9", "name": "Alocacia Black", "size": "Maceta N°13", "priceNum": 12500, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "int-10", "name": "Monstera Deliciosa", "size": "Maceta N°3 (3L)", "priceNum": 6800, "oldPriceNum": 8500, "hasPromo": true, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "int-11", "name": "Potus Común", "size": "Tutor / 3 Litros", "priceNum": 7000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "int-12", "name": "Palo de Agua", "size": "3 Litros", "priceNum": 6000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "int-13", "name": "Palmito", "size": "3 Litros Alto", "priceNum": 10000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "int-14", "name": "Ficus Lyrata (Pandurata)", "size": "3 Litros", "priceNum": 15000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "int-15", "name": "Gomero Común", "size": "3 Litros", "priceNum": 14000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"]}
+      {
+        "id": "p1",
+        "name": "Monstera Deliciosa",
+        "size": "Maceta N°3 (3L)",
+        "priceNum": 6800,
+        "oldPriceNum": 8500,
+        "hasPromo": true,
+        "info": "Requiere luz indirecta y riego moderado.",
+        "imgs": [
+          "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80",
+          "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "Potus Común",
+        "size": "Maceta N°3 (3L)",
+        "priceNum": 7000,
+        "info": "Ideal para interiores con buena iluminación.",
+        "imgs": [
+          "https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"
+        ]
+      }
     ]
   },
   {
-    "category": "Plantas Maceta N°5 (5L)",
-    "tag": "5l",
-    "items": [
-      {"id": "m5-1", "name": "Palo de Agua", "size": "Maceta N°5 (5L)", "priceNum": 15200, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "m5-2", "name": "Crotón", "size": "Maceta N°5 (5L)", "priceNum": 7600, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "m5-3", "name": "Anthurium", "size": "Maceta N°5 (5L)", "priceNum": 8450, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "m5-4", "name": "Rubra", "size": "Maceta N°5 (5L)", "priceNum": 14000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "m5-5", "name": "Tricolor", "size": "Maceta N°5 (5L)", "priceNum": 25000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]}
-    ]
-  },
-  {
-    "category": "Florales y Plantines (N°12)",
+    "category": "Florales y Plantines",
     "tag": "florales",
     "items": [
-      {"id": "fl-1", "name": "Pensamiento", "size": "Maceta N°12", "priceNum": 2200, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "fl-2", "name": "Gazania", "size": "Maceta N°12", "priceNum": 2200, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "fl-3", "name": "Begonia Doble", "size": "Maceta N°12", "priceNum": 2200, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "fl-4", "name": "Suculentas (Varias)", "size": "Varias medidas", "priceNum": 2050, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "fl-5", "name": "Florales Variados", "size": "Maceta N°12", "priceNum": 1700, "oldPriceNum": 2550, "hasPromo": true, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"]}
-    ]
-  },
-  {
-    "category": "Frutales y Cítricos",
-    "tag": "insumos",
-    "items": [
-      {"id": "fr-1", "name": "Arándano", "size": "Maceta N°14", "priceNum": 6800, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "fr-2", "name": "Ciruela Remolacha", "size": "Árbol frutal", "priceNum": 16000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "fr-3", "name": "Durazno", "size": "10 Litros", "priceNum": 14800, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "fr-4", "name": "Mango", "size": "3 Litros", "priceNum": 14000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"]}
-    ]
-  },
-  {
-    "category": "Insumos y Macetas",
-    "tag": "insumos",
-    "items": [
-      {"id": "in-1", "name": "Tierra Fértil", "size": "Bolsa", "priceNum": 13500, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"]},
-      {"id": "in-2", "name": "Cactus", "size": "Variedad", "priceNum": 1700, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"]}
+      {
+        "id": "p3",
+        "name": "Pensamiento",
+        "size": "Maceta N°12",
+        "priceNum": 2200,
+        "info": "Planta de exterior resistente al sol pleno.",
+        "imgs": [
+          "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"
+        ]
+      }
     ]
   }
 ]
