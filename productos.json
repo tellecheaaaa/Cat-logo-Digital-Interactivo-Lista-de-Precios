@@ -123,7 +123,7 @@
       { "id": "94", "name": "Azarero 7lt", "size": "7 Litros", "priceNum": 8000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
       { "id": "95", "name": "Buxus 5lts", "size": "5 Litros", "priceNum": 11000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
       { "id": "96", "name": "Camelia 3lts", "size": "3 Litros", "priceNum": 12000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] },
-      { "id": "97", "name": " Eugenia 10L", "size": "10 Litros", "priceNum": 12000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
+      { "id": "97", "name": "Eugenia 10L", "size": "10 Litros", "priceNum": 12000, "imgs": ["https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=500&q=80"] },
       { "id": "98", "name": "Jazmin de leche 5lt", "size": "5 Litros", "priceNum": 8000, "imgs": ["https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=500&q=80"] },
       { "id": "99", "name": "Leylandi 4lt 1.2m", "size": "4 Litros", "priceNum": 10000, "imgs": ["https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80"] },
       { "id": "100", "name": "Photineas 7lts", "size": "7 Litros", "priceNum": 20000, "imgs": ["https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=500&q=80"] }
